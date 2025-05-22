@@ -1,0 +1,583 @@
+// @import "/src/fonts.scss";
+
+@font-face {
+  font-family: "fontR";
+  src: url("../fonts/Avenir\ Next\ LT\ Pro\ Regular.otf");
+}
+
+@font-face {
+  font-family: "fontB";
+  src: url("../fonts/AvenirNextLTPro-Bold.otf");
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#mainDiv {
+  position: absolute;
+  // background-color: rgb(178, 98, 0);
+  background-image: url("../assets/bg.png");
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+#logo {
+  position: absolute;
+  margin: auto;
+  top: -4%;
+  left: -10%; //-7%; //-10%
+  width: 70vw; //60vw; //firstscreen 70vw
+  height: calc(70vw / 1.74);
+  background-size: 100%;
+  background-image: url("../assets/logo.png");
+  background-position: 0 0%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+#soundIcon {
+  position: absolute;
+  width: 15%;
+  top: 3%;
+  right: 4%;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+  cursor: pointer;
+}
+
+#twenty_Div {
+  position: absolute;
+  width: 85vw;
+  height: calc(85vw / 0.61);
+  background-image: url("../assets/twenty.png");
+  background-size: 100%;
+  background-position: 0 0%;
+  margin: auto;
+  right: -5%;
+  bottom: 0;
+  top: 0;
+}
+
+#charcter_Div {
+  position: absolute;
+  width: 85vw;
+  height: calc(85vw / 0.61);
+  background-image: url("../assets/character.png");
+  background-size: 100%;
+  background-position: 0 0%;
+  margin: auto;
+  right: -3%;
+  bottom: 0;
+  top: 0;
+  opacity: 0;
+  transition: opacity 1s linear;
+}
+
+#star_Div {
+  position: absolute;
+  width: 30%;
+  margin: auto;
+  left: -14%;
+  top: 17%;
+}
+
+#arrow_Div {
+  position: absolute;
+  width: 40%;
+  margin: auto;
+  right: 5%;
+  bottom: 10%;
+}
+#playPuzzle_Div {
+  position: absolute;
+  left: -15%;
+  bottom: 20%;
+
+  width: 50vw;
+  height: calc(50vw / 2.04);
+  background-image: url("../assets/playPuzzelText.png");
+  background-size: 100%;
+  background-position: 0 0%;
+  margin: auto;
+  // opacity: 1;
+  // transition: opacity 1s linear;
+}
+
+$fuschia: #ff0081;
+$button-bg: $fuschia;
+$button-text-color: #fff;
+$baby-blue: #f8faff;
+
+#startButtonBg {
+  position: absolute;
+  margin: auto;
+  width: 60%;
+  height: 8%;
+  left: 0;
+  right: 0;
+  bottom: 5%;
+  transform: scale(0);
+  cursor: pointer;
+
+  box-shadow: 1px 3px 10px #0079c2;
+  border: none;
+  color: white;
+  background: #0078c8;
+  border-radius: 50px;
+}
+
+#startButtonBg:active {
+  // .startbuttonBgActive {
+  transform: scale(0.93) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4) !important;
+  transition: all 0.1s ease-in-out !important;
+}
+
+#startText_Div {
+  position: absolute;
+  margin: auto;
+  left: -10%;
+  right: 0;
+  top: 30%;
+  font-family: "fontB";
+  font-size: 6.5vw;
+  color: white;
+  text-align: center;
+}
+
+#startArrow_Div {
+  position: absolute;
+  margin: auto;
+  left: 45%;
+  right: 0;
+  top: 2%;
+  width: 5%;
+}
+
+#formPage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: space-evenly;
+  width: 80%;
+  // height: 80%;
+  top: 60%;
+  margin: auto;
+  transform: translateY(-55%) scaleY(0);
+  // left: 0;
+  // right: 0;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-3px);
+  }
+  50% {
+    transform: translateX(3px);
+  }
+  75% {
+    transform: translateX(-3px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.shake {
+  animation: shake 0.4s ease;
+}
+
+#formPageText {
+  font-family: "fontB";
+  font-size: 6vw;
+  color: #0079c2;
+  text-align: center;
+  // margin-bottom: 1% ;
+}
+
+#input1,
+#input2,
+#input3 {
+  margin-bottom: 2%;
+}
+#input4 {
+  margin-bottom: 5%;
+  margin-top: 2%;
+}
+
+.error {
+  border: 2px solid red;
+  border-radius: 30px; /* optional, match input shape */
+  padding: 0%; /* optional, space between content and border */
+}
+
+.input-wrapper.error .input-bg {
+  border: 2px solid red;
+  border-radius: 50px; /* Match the border-radius of your inputbox image */
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.input-bg input {
+  background: transparent;
+  border: transparent;
+  width: 85%;
+  // height: 8%;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  outline: none;
+  text-align: center;
+  font-size: 5vw;
+  font-family: "fontR";
+  margin-top: 4%;
+}
+
+#uniqueCode {
+  margin-top: 6%;
+}
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  -webkit-box-shadow: 0 0 0 1000px transparent inset !important;
+  -webkit-text-fill-color: #000 !important; /* or your desired text color */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+#input1 label,
+#input2 label,
+#input3 label {
+  font-size: 4.5vw;
+  font-family: "fontR";
+  color: white;
+  margin-left: 4%;
+
+  // text-align: start;
+}
+
+.input-bg img {
+  margin-top: 1%;
+  margin-bottom: -2%;
+}
+
+#uniqueCode_text {
+  font-size: 4.5vw;
+  font-family: "fontB";
+  color: white;
+  text-align: center;
+  margin-bottom: 2%;
+}
+#Popup {
+  display: none;
+  position: relative;
+  /* top: -5%; */
+  /* left: 0; */
+  color: white;
+  padding: 0 8px;
+  font-size: 12px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+  margin: auto;
+  text-align: center;
+  font-family: "fontR";
+}
+
+#TAndC_Div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  margin: auto;
+  gap: 3%;
+  justify-content: center;
+  margin-top: 2%;
+}
+
+#TickImage_Div {
+  width: 7%;
+  cursor: pointer;
+}
+#accept_Text {
+  font-family: "fontR";
+  font-size: 3.5vw;
+  color: white;
+}
+
+#submitButtonBg {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  // margin-top: 20px;
+}
+
+#submitButton {
+  width: 75%;
+  max-width: 300px;
+  background: #0078c8;
+  color: white;
+  padding: 15px 5%;
+  font-size: 1.5rem;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 1px 3px 10px #0079c2;
+  cursor: pointer;
+  font-family: "fontB";
+  transition: all 0.2s ease-in-out;
+  // opacity: 0.6;
+}
+
+#submitButton:active {
+  transform: scale(0.93) !important;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4) !important;
+}
+
+#errorPopup {
+  position: fixed;
+  bottom: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ff4d4d;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 999;
+}
+
+#errorPopup.show {
+  bottom: 50px;
+  opacity: 1;
+}
+
+#prizePage {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 70%;
+  gap: 4%;
+  top: 20%;
+  transform: scaleY(0);
+}
+
+#congrts_Text {
+  font-family: "fontB";
+  font-size: 7vw;
+  color: #0079c2;
+  text-align: center;
+}
+
+#prizeBg {
+  width: 80%;
+  position: relative;
+}
+
+#prizeText {
+  font-family: "fontR";
+  font-size: 4.5vw;
+  color: #0079c2;
+  text-align: center;
+
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 19%;
+}
+
+#prizeText span {
+  font-family: "fontB";
+}
+
+#uniqueCodeBg {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 6%;
+  width: 80%;
+}
+
+#UniqueCodeText {
+  font-family: "fontB";
+  font-size: 5vw;
+  color: white;
+  text-align: center;
+
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 35%;
+  transform: translateY(-35%);
+}
+
+#BaloonImage_Div {
+  width: 25%;
+  position: absolute;
+  top: -20%;
+  right: -10%;
+}
+
+#confetti-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: fall linear forwards;
+  top: 0;
+  z-index: 9999;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotateZ(360deg);
+    opacity: 0;
+  }
+}
+
+.balloon {
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  animation: floatUp linear forwards;
+  z-index: 10;
+}
+
+@keyframes floatUp {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-120vh);
+    opacity: 0.7;
+  }
+}
+
+//Desktop
+@media screen and (min-width: 470px) {
+  #mainDiv {
+    width: 56vh;
+  }
+
+  #logo {
+    width: 45vh; //firstscreen 45vh
+    height: calc(45vh / 1.74);
+  }
+
+  #twenty_Div {
+    width: 45vh;
+    height: calc(45vh / 0.61);
+  }
+
+  #charcter_Div {
+    width: 45vh;
+    height: calc(45vh / 0.61);
+  }
+
+  #playPuzzle_Div {
+    width: 25vh;
+    height: calc(25vh / 2.04);
+  }
+
+  #startText_Div {
+    font-size: 3.3vh;
+  }
+  #startArrow_Div {
+    left: 40%;
+  }
+
+  #formPageText {
+    font-size: 3.8vh;
+  }
+
+  .input-bg input {
+    font-size: 2.5vh;
+  }
+  #input1 label,
+  #input2 label,
+  #input3 label {
+    font-size: 2.3vh;
+  }
+
+  #uniqueCode_text {
+    font-size: 2.25vh;
+  }
+
+  #accept_Text {
+    font-size: 1.55vh;
+  }
+
+  #congrts_Text {
+    font-size: 4vh;
+  }
+
+  #prizeText {
+    font-size: 2.5vh;
+  }
+
+  #UniqueCodeText {
+    font-size: 2.5vh;
+  }
+}
