@@ -53,6 +53,24 @@ document
   .querySelector("#TickImage_Div")
   .addEventListener("click", tickToggle.bind(this));
 
+document.querySelector("#termsAndConditions").addEventListener("click", () => {
+  document.querySelector("#popupIDTH").style.display = "block";
+  document.querySelector("#popupIDTH").style.opacity = "1";
+
+  // document.getElementById("popupIDTH").style.transition =
+  //   "transform 0.3s ease-in-out";
+  // document.getElementById("popupIDTH").style.transform = "scaleY(1)";
+});
+
+document.querySelector("#close2").addEventListener("click", () => {
+  document.querySelector("#popupIDTH").style.display = "none";
+  document.querySelector("#popupIDTH").style.opacity = "0";
+
+  // document.getElementById("popupIDTH").style.transition =
+  //   "transform 0.3s ease-in-out";
+  // document.getElementById("popupIDTH").style.transform = "scaleY(0)";
+});
+
 function onload() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("firstScreen").style.opacity = 1;
